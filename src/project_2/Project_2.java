@@ -62,7 +62,7 @@ public class Project_2 {
                num = new Scanner(System.in);
               System.out.print("enter the number of queries ");
               numOfqueries = num.nextInt();
-              System.out.println(numOfqueries);
+         
                
               queries = new String[numOfqueries];
               System.out.println("enter queries");
@@ -82,20 +82,25 @@ public class Project_2 {
               
         }
           for (int i = 0; i < numOfTestCases; i++) {
-              System.out.println("case #" + i);
+              System.out.println("case #" + (i+1));
               System.out.println("---------------");
               double[][] temp1 ;
               for (int j = 0; j < arrays[i].getQueries().length; j++) {
                    String temp = arrays[i].getQueries()[j];
+                  
                    temp1 = arrays[i].work(temp);
+                   if (temp1 != null){
+                   
                    System.out.println(temp);
                    for (int k = 0; k < temp1.length; k++) {
                        for (int l = 0; l < temp1[0].length; l++) {
-                           System.out.print(temp1[k][l]);
+                           System.out.print(temp1[k][l]+ "  ");
                        }
                        System.out.println();
                        
                   }
+                   }else{System.out.println("sorry invalid input  " + temp);}
+                   
               }
         }
         }
