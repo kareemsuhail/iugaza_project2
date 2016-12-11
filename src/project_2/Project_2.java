@@ -17,6 +17,9 @@ public class Project_2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+             boolean err = false ;
+           do{
+          try{
           int numOfqueries = 0 ;
           String[] queries ;
           Scanner inputQuery ;
@@ -26,7 +29,9 @@ public class Project_2 {
           Scanner inputMatrixA ;
           Scanner inputDimensionA;
           Scanner numTest = new Scanner(System.in);
+              
           System.out.println("Enter the number of test cases");
+          System.out.println("------------------------------");
           int numOfTestCases = numTest.nextInt();
           ArrayCustomized[] arrays = new ArrayCustomized[numOfTestCases];
           for (int i = 1; i <= numOfTestCases ; i++) {
@@ -99,11 +104,18 @@ public class Project_2 {
                        System.out.println();
                        
                   }
-                   }else{System.out.println("sorry invalid input  " + temp);}
+                   }else{System.out.println("sorry invalid input : " + temp);}
                    
               }
         }
+        }catch(Exception ex){
+        System.err.println("sorry .... unexpected error happened .. please try again"
+                + " or contact us at kska213@gmail.com");
+              System.out.println("-----------------");
         }
+           }while(err = true);
+        }
+    
     }
     
     
@@ -131,9 +143,9 @@ class ArrayCustomized {
           return transpos(B);
          
          }else if(s.equalsIgnoreCase("Transpose A")){
-         return transpos(B);
+         return transpos(A);
          }
-         else if(s.equalsIgnoreCase("SUM A B")|| s.equals("SUM B A")){
+         else if(s.equalsIgnoreCase("SUM A B")|| s.equalsIgnoreCase("SUM B A")){
          return sum(A, B);
          }else if (s.equalsIgnoreCase("SUBT A B")){
          return sub(A, B);
@@ -192,19 +204,12 @@ class ArrayCustomized {
         return sub;
     }
 
-    public  double[][] transpos(double[][] a) {
-        if (a.length == a[0].length) {
-            for (int i = 0; i < a.length; i++) {
-                for (int j = 0; j < a[0].length; j++) {
-                    double temp = a[i][j];
-                    a[i][j] = a[j][i];
-                    a[j][i] = temp;
-
-                }
-            }
-        }
-        return a;
-
+    public  double[][] transpos(double[][] m) {
+        double[][] temp = new double[m[0].length][m.length];
+        for (int i = 0; i < m.length; i++)
+            for (int j = 0; j < m[0].length; j++)
+                temp[j][i] = m[i][j];
+        return temp;
     }
 
     public  double[][] mul(double[][] a, double[][] b) {
