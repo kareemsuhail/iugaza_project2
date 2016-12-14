@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ this code has been writen for islamic university as 
+a project for java course ,, 
+writen by : Khaled shurrab and kareem ayesh 
+supervisor : eng.Mustafa daluol 
  */
 package project_2;
 
