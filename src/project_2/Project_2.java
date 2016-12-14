@@ -108,13 +108,16 @@ public class Project_2 {
                    }else{System.out.println("sorry invalid input : " + temp);}
                    
               }
+              err = false ;
+              System.out.println("thanks for using our service ");
         }
         }catch(Exception ex){
         System.err.println("sorry .... unexpected error happened .. please try again"
                 + " or contact us at kska213@gmail.com");
               System.out.println("-----------------");
+              err = true ;
         }
-           }while(err = true);
+           }while(err );
         }
     
     }
@@ -193,8 +196,11 @@ class ArrayCustomized {
                     sum[i][j] = a[i][j] + b[i][j];
                 }
             }
+            return sum;
+        }else {
+        return null ;
         }
-        return sum;
+        
     }
 
     public  double[][] sub(double[][] a, double[][] b) {
@@ -205,8 +211,11 @@ class ArrayCustomized {
                     sub[i][j] = a[i][j] - b[i][j];
                 }
             }
+            return sub ;
+        }else {
+        return null ;
         }
-        return sub;
+        
     }
 
     public  double[][] transpos(double[][] m) {
