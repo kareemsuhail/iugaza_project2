@@ -154,7 +154,11 @@ class ArrayCustomized {
          }else if (s.equalsIgnoreCase("MUL A B")){
          return mul(A, B);
          }else if (s.equalsIgnoreCase("MUL B A")){
-         return sub(B,A);
+         return mul(B,A);
+         }else if (s.equalsIgnoreCase("MUL A A")){
+         return mul(A,A);
+         }else if(s.equalsIgnoreCase("MUL B B")){
+         return mul(B,B);
          }
          return null ;
      
